@@ -1,0 +1,10 @@
+﻿User Story
+
+// keine wirkliche User Story, verstehen wir es als Test -> PUNK!
+
+	- Iterationen: Wiederholungen
+	- Beim Programmieren: 
+		○ Coden, Kompilieren, Testen
+
+	- Vor dem Coden (5 Schritte)
+Anforderungen, Design, Implementieren (Coden), Testen, Release
