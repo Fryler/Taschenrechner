@@ -8,3 +8,9 @@
 
 	- Vor dem Coden (5 Schritte)
 Anforderungen, Design, Implementieren (Coden), Testen, Release
+
+User Story 1: 
+Addieren
+User Story 2: 
+Subtrahieren
+
