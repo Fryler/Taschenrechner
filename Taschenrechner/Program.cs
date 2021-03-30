@@ -21,8 +21,21 @@ namespace Taschenrechner
             Summand1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Addition: Geben Sie bitte die zweite zu addierende Zahl ein und bestätigen Sie mit Enter: ");
             Summand2 = Convert.ToDouble(Console.ReadLine());
-            Summe = Summand1 + Summand2;
+            Summe = Addiere(Summand1, Summand2);
             Console.WriteLine("Das Addition von " + Summand1 + " und " + Summand2 + " ist: " + Summe);
+            WarteAufBenutzerEingabe();
+        }
+
+        static double Addiere(double Summand1, double Summand2)
+        {
+            double summe = Summand1 + Summand2;
+
+            return summe;
+        }
+
+        static void WarteAufBenutzerEingabe()
+        {
+            Console.Write("Zum Beenden bitte die Enter-Taste drücken!");
             Console.ReadLine();
         }
     }
