@@ -23,18 +23,29 @@ namespace Taschenrechner
 
             Console.WriteLine("-----Taschenrechner 1.0 by Steffen Richter-----");
 
-
-            Console.WriteLine("Geben Sie bitte die erste Zahl ein und bestätigen Sie mit Enter: ");
-            double x = Convert.ToDouble(Console.ReadLine()); 
+            string xalsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+            string yalsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
             
-            Console.WriteLine("Geben Sie bitte die zweite Zahl ein und bestätigen Sie mit Enter: ");
-            double y = Convert.ToDouble(Console.ReadLine());
+            // Wandel Text in Gleitkommazahlen um
+            // TODO: Auslagern wenn mehr Funktionen verfügbar sind
+            double x = Convert.ToDouble(xalsString); 
+            double y = Convert.ToDouble(yalsString);
 
-            double summe = Addiere(y, x);
+            // Berechnung ausführen
+            double summe = Addiere(x, y);
 
+            // Ausgabe
             Console.WriteLine("Die Summe beider ist: {0}", summe);
 
-            WarteAufBenutzerEingabe();
+            HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
+        }
+
+        static string HoleBenutzerEingabe(string ausgabeText)
+        {
+            Console.Write(ausgabeText);
+            string summand = Console.ReadLine();
+
+            return summand; 
         }
 
         static double Addiere(double x, double y)
@@ -44,10 +55,11 @@ namespace Taschenrechner
             return summe;
         }
 
-        static void WarteAufBenutzerEingabe()
+        static double Subtrahiere(double x, double y)
         {
-            Console.Write("Zum Beenden bitte die Enter-Taste drücken!");
-            Console.ReadLine();
+            double differenz = x - y;
+
+            return differenz;
         }
     }
 }
