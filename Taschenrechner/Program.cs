@@ -31,11 +31,16 @@ namespace Taschenrechner
             double x = Convert.ToDouble(xalsString); 
             double y = Convert.ToDouble(yalsString);
 
+            string Operation = HoleBenutzerEingabe("Bitte wähle zwischen Addition oder Subtraktion, gib '+' oder '-' ein: ");
+
             // Berechnung ausführen
-            double summe = Addiere(x, y);
+            if (true)
+            {
+                double summe = Addiere(x, y);
+            }
 
             // Ausgabe
-            Console.WriteLine("Die Summe beider ist: {0}", summe);
+            Console.WriteLine("Die Ergebnis ist: {0}", summe);
 
             HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
         }
