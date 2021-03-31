@@ -1,6 +1,0 @@
-TAG: Addieren Iteration 1 fertig
-ART: internes Entwicklungsrelease
-STATUS: informell getestet -  kann vom Tester verteilt werden
-FUNKTION: 
-* Addieren von Gleitkommazahlen
-* Schnelles Starten (einfach EXE ausführen) 
