@@ -25,22 +25,32 @@ namespace Taschenrechner
 
             string xalsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string yalsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            
+            string Operation = HoleBenutzerEingabe("Bitte wähle zwischen Addition oder Subtraktion, gib '+' oder '-' ein: ");
+
             // Wandel Text in Gleitkommazahlen um
             // TODO: Auslagern wenn mehr Funktionen verfügbar sind
             double x = Convert.ToDouble(xalsString); 
             double y = Convert.ToDouble(yalsString);
 
-            string Operation = HoleBenutzerEingabe("Bitte wähle zwischen Addition oder Subtraktion, gib '+' oder '-' ein: ");
-
             // Berechnung ausführen
-            if (true)
+            double resultat = 0; 
+
+           
+            if (Operation == "+")
             {
-                double summe = Addiere(x, y);
+                resultat = Addiere(x, y);
+                Console.WriteLine("Die Summe ist: {0}", resultat);
             }
 
-            // Ausgabe
-            Console.WriteLine("Die Ergebnis ist: {0}", summe);
+            else if (Operation == "-")
+            {
+                resultat = Subtrahiere(x, y);
+                Console.WriteLine("Die Differenz ist: {0}", resultat);
+            }
+            else
+            {
+                Console.WriteLine("Sie haben eine ungültige Eingabe gemacht!");
+            }
 
             HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
         }
