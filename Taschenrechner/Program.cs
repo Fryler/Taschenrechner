@@ -25,7 +25,7 @@ namespace Taschenrechner
 
             string xalsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string yalsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            string Operation = HoleBenutzerEingabe("Bitte wähle zwischen Addition oder Subtraktion, gib '+' oder '-' ein: ");
+            string Operation = HoleBenutzerEingabe("Bitte wähle eine der 4 Grundrechenarten '+,-,*,/': ");
 
             // Wandel Text in Gleitkommazahlen um
             // TODO: Auslagern wenn mehr Funktionen verfügbar sind
@@ -34,6 +34,7 @@ namespace Taschenrechner
 
             // Berechnung ausführen
             double resultat = 0;
+
             switch (Operation)
             {
                 case "+":
@@ -49,8 +50,12 @@ namespace Taschenrechner
                     break;
 
                 case "/":
+                    resultat = Dividiere(x, y);
+                    Console.WriteLine("Der Quotient ist: {0}", resultat);
+                    break;
                 case "*":
-                    Console.WriteLine("Diese Anweisung wird bald unterstützt! Trust, bro! :-)");
+                    resultat = Multipliziere(x, y);
+                    Console.WriteLine("Das Produkt ist: {0}", resultat);
                     break;
 
                 default:
@@ -81,6 +86,20 @@ namespace Taschenrechner
             double differenz = x - y;
 
             return differenz;
+        }
+
+        static double Dividiere(double Dividend, double Divisor)
+        {
+            double Quotient = Dividend / Divisor;
+
+            return Quotient; 
+        }
+
+        static double Multipliziere(double Multiplikator, double Multiplikant)
+        {
+            double Produktwert = Multiplikator * Multiplikant;
+
+            return Produktwert; 
         }
     }
 }
