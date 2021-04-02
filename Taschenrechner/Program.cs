@@ -33,23 +33,29 @@ namespace Taschenrechner
             double y = Convert.ToDouble(yalsString);
 
             // Berechnung ausführen
-            double resultat = 0; 
+            double resultat = 0;
+            switch (Operation)
+            {
+                case "+":
 
-           
-            if (Operation == "+")
-            {
-                resultat = Addiere(x, y);
-                Console.WriteLine("Die Summe ist: {0}", resultat);
-            }
+                    resultat = Addiere(x, y);
+                    Console.WriteLine("Die Summe ist: {0}", resultat);
+                    break;
+                
+                case "-":
 
-            else if (Operation == "-")
-            {
-                resultat = Subtrahiere(x, y);
-                Console.WriteLine("Die Differenz ist: {0}", resultat);
-            }
-            else
-            {
-                Console.WriteLine("Sie haben eine ungültige Eingabe gemacht!");
+                    resultat = Subtrahiere(x, y);
+                    Console.WriteLine("Die Differenz ist: {0}", resultat);
+                    break;
+
+                case "/":
+                case "*":
+                    Console.WriteLine("Diese Anweisung wird bald unterstützt! Trust, bro! :-)");
+                    break;
+
+                default:
+                    Console.WriteLine("Sie haben eine ungültige Eingabe gemacht!");
+                    break;
             }
 
             HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
