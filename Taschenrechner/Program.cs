@@ -18,9 +18,7 @@ namespace Taschenrechner
         // Methode implementieren (Anweisung in den Methodenrumpf schreiben)
 
        static void Main(string[] args)
-        {
-            //Ziel: Addieren; 2 Zahlen zwischen 0 und 10. 
-
+        { 
             Console.WriteLine("-----Taschenrechner 1.0 by Steffen Richter-----");
 
             string xalsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
@@ -33,28 +31,32 @@ namespace Taschenrechner
             double y = Convert.ToDouble(yalsString);
 
             // Berechnung ausführen
-            double resultat = 0;
+            double resultat = BerechnungAusführen(x, y, Operation);
 
+
+            //Ausgabe
+            GibResultatAus(resultat, Operation);
+
+
+            HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
+        }
+
+        static void GibResultatAus(double resultat, string Operation)
+        {
             switch (Operation)
             {
                 case "+":
-
-                    resultat = Addiere(x, y);
                     Console.WriteLine("Die Summe ist: {0}", resultat);
                     break;
-                
-                case "-":
 
-                    resultat = Subtrahiere(x, y);
+                case "-":
                     Console.WriteLine("Die Differenz ist: {0}", resultat);
                     break;
 
                 case "/":
-                    resultat = Dividiere(x, y);
                     Console.WriteLine("Der Quotient ist: {0}", resultat);
                     break;
                 case "*":
-                    resultat = Multipliziere(x, y);
                     Console.WriteLine("Das Produkt ist: {0}", resultat);
                     break;
 
@@ -62,8 +64,37 @@ namespace Taschenrechner
                     Console.WriteLine("Sie haben eine ungültige Eingabe gemacht!");
                     break;
             }
+        }
 
-            HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
+        static double BerechnungAusführen(double x, double y, string Operation)
+        {
+            double resultat = 0;
+
+            switch (Operation)
+            {
+                case "+":
+
+                    resultat = Addiere(x, y);
+                    
+                    break;
+
+                case "-":
+
+                    resultat = Subtrahiere(x, y);
+                    
+                    break;
+
+                case "/":
+                    resultat = Dividiere(x, y);
+                    
+                    break;
+                case "*":
+                    resultat = Multipliziere(x, y);
+                    
+                    break;
+
+            }
+            return resultat;
         }
 
         static string HoleBenutzerEingabe(string ausgabeText)
