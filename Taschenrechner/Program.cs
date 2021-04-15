@@ -31,7 +31,8 @@ namespace Taschenrechner
             double y = Convert.ToDouble(yalsString);
 
             // Berechnung ausführen
-            double resultat = BerechnungAusführen(x, y, Operation);
+            RechnerModel model = new RechnerModel(); 
+            double resultat = model.Berechne    (x, y, Operation);
 
 
             //Ausgabe
@@ -66,37 +67,6 @@ namespace Taschenrechner
             }
         }
 
-        static double BerechnungAusführen(double x, double y, string Operation)
-        {
-            double resultat = 0;
-
-            switch (Operation)
-            {
-                case "+":
-
-                    resultat = Addiere(x, y);
-                    
-                    break;
-
-                case "-":
-
-                    resultat = Subtrahiere(x, y);
-                    
-                    break;
-
-                case "/":
-                    resultat = Dividiere(x, y);
-                    
-                    break;
-                case "*":
-                    resultat = Multipliziere(x, y);
-                    
-                    break;
-
-            }
-            return resultat;
-        }
-
         static string HoleBenutzerEingabe(string ausgabeText)
         {
             Console.Write(ausgabeText);
@@ -105,32 +75,5 @@ namespace Taschenrechner
             return summand; 
         }
 
-        static double Addiere(double x, double y)
-        {
-            double summe = x + y;
-
-            return summe;
-        }
-
-        static double Subtrahiere(double x, double y)
-        {
-            double differenz = x - y;
-
-            return differenz;
-        }
-
-        static double Dividiere(double Dividend, double Divisor)
-        {
-            double Quotient = Dividend / Divisor;
-
-            return Quotient; 
-        }
-
-        static double Multipliziere(double Multiplikator, double Multiplikant)
-        {
-            double Produktwert = Multiplikator * Multiplikant;
-
-            return Produktwert; 
-        }
     }
 }
