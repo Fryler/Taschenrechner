@@ -32,11 +32,11 @@ namespace Taschenrechner
 
             // Berechnung ausführen
             RechnerModel model = new RechnerModel(); 
-            double resultat = model.Berechne    (x, y, Operation);
+            model.Berechne(x, y, Operation);
 
 
             //Ausgabe
-            GibResultatAus(resultat, Operation);
+            GibResultatAus(model.Resultat, Operation);
 
 
             HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
