@@ -20,10 +20,10 @@ namespace Taschenrechner
        static void Main(string[] args)
         { 
             Console.WriteLine("-----Taschenrechner 1.0 by Steffen Richter-----");
-
-            string xalsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
-            string yalsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            string Operation = HoleBenutzerEingabe("Bitte wähle eine der 4 Grundrechenarten '+,-,*,/': ");
+            ConsoleView view = new ConsoleView();
+            string xalsString = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+            string yalsString = view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
+            string Operation = view.HoleBenutzerEingabe("Bitte wähle eine der 4 Grundrechenarten '+,-,*,/': ");
 
             // Wandel Text in Gleitkommazahlen um
             // TODO: Auslagern wenn mehr Funktionen verfügbar sind
@@ -36,44 +36,13 @@ namespace Taschenrechner
 
 
             //Ausgabe
-            GibResultatAus(model.Resultat, Operation);
+
+            
+
+            view.GibResultatAus(model.Resultat, Operation);
 
 
-            HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
+            view.HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
         }
-
-        static void GibResultatAus(double resultat, string Operation)
-        {
-            switch (Operation)
-            {
-                case "+":
-                    Console.WriteLine("Die Summe ist: {0}", resultat);
-                    break;
-
-                case "-":
-                    Console.WriteLine("Die Differenz ist: {0}", resultat);
-                    break;
-
-                case "/":
-                    Console.WriteLine("Der Quotient ist: {0}", resultat);
-                    break;
-                case "*":
-                    Console.WriteLine("Das Produkt ist: {0}", resultat);
-                    break;
-
-                default:
-                    Console.WriteLine("Sie haben eine ungültige Eingabe gemacht!");
-                    break;
-            }
-        }
-
-        static string HoleBenutzerEingabe(string ausgabeText)
-        {
-            Console.Write(ausgabeText);
-            string summand = Console.ReadLine();
-
-            return summand; 
-        }
-
     }
 }
