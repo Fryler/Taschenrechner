@@ -20,7 +20,8 @@ namespace Taschenrechner
        static void Main(string[] args)
         { 
             Console.WriteLine("-----Taschenrechner 1.0 by Steffen Richter-----");
-            ConsoleView view = new ConsoleView();
+            RechnerModel model = new RechnerModel();
+            ConsoleView view = new ConsoleView(model);
             string xalsString = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
             string yalsString = view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
             string Operation = view.HoleBenutzerEingabe("Bitte wähle eine der 4 Grundrechenarten '+,-,*,/': ");
@@ -31,7 +32,7 @@ namespace Taschenrechner
             double y = Convert.ToDouble(yalsString);
 
             // Berechnung ausführen
-            RechnerModel model = new RechnerModel(); 
+             
             model.Berechne(x, y, Operation);
 
 
@@ -39,7 +40,7 @@ namespace Taschenrechner
 
             
 
-            view.GibResultatAus(model.Resultat, Operation);
+            view.GibResultatAus( Operation);
 
 
             view.HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
