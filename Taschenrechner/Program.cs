@@ -22,9 +22,9 @@ namespace Taschenrechner
             Console.WriteLine("-----Taschenrechner 1.0 by Steffen Richter-----");
             RechnerModel model = new RechnerModel();
             ConsoleView view = new ConsoleView(model);
-            string xalsString = view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
-            string yalsString = view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            string Operation = view.HoleBenutzerEingabe("Bitte wähle eine der 4 Grundrechenarten '+,-,*,/': ");
+            string xalsString = view.HoleZahlVomBenutzer();
+            string Operation = view.HoleOperatorVomBenutzer();
+            string yalsString = view.HoleZahlVomBenutzer();
 
             // Wandel Text in Gleitkommazahlen um
             // TODO: Auslagern wenn mehr Funktionen verfügbar sind
@@ -32,18 +32,14 @@ namespace Taschenrechner
             double y = Convert.ToDouble(yalsString);
 
             // Berechnung ausführen
-             
+              
             model.Berechne(x, y, Operation);
 
 
             //Ausgabe
-
-            
-
             view.GibResultatAus( Operation);
 
-
-            view.HoleBenutzerEingabe("Bitte Enter zum Beenden betätigen!");
+            view.WarteAufEndeVomBenutzer();
         }
     }
 }

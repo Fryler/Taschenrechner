@@ -8,11 +8,29 @@ namespace Taschenrechner
 {
     class ConsoleView
     {
-        private RechnerModel model; 
+        private RechnerModel model;
 
-        public  ConsoleView(RechnerModel model)
+        public ConsoleView(RechnerModel model)
         {
-            this.model = model; 
+            this.model = model;
+        }
+
+        public string HoleZahlVomBenutzer()
+        {
+            Console.Write("Bitte gib ein Zahl für die Berechnung ein: ");
+            return  Console.ReadLine();
+        }
+
+        public string HoleOperatorVomBenutzer()
+        {
+            Console.Write("Bitte geben Sie die auszuführende Operation ein: ");
+            return Console.ReadLine(); 
+        }
+
+        public string WarteAufEndeVomBenutzer()
+        {
+            Console.Write("Zum Beenden Return drücken!");
+            return Console.ReadLine();  
         }
 
         public void GibResultatAus(string Operation)
